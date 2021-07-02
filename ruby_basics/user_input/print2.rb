@@ -1,3 +1,6 @@
+#this was my first try. It's way more complicated than the given solution
+#however mine is more functional!
+
 response = nil
 
 def valid_number?(number_string)
