@@ -8,3 +8,5 @@ end
 my_value(a)
 puts "My guess\nXyzzy"
 puts a
+
+#After review, string[] is mutable from inside a method

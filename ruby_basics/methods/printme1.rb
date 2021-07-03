@@ -3,3 +3,9 @@ def print_me
 end
 
 print_me
+
+def print_me2
+  "I'm printing the return value!"
+end
+
+puts print_me2

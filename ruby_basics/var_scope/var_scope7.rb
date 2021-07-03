@@ -7,3 +7,7 @@ end
 
 puts "my guess\n7"
 puts a
+
+#After review - method invocation is not the same as method definition!
+#Method definition restrics local variable scope
+#Method invocation with a block has more open variable scope
