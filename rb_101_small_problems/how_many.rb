@@ -1,11 +1,12 @@
 def count_occurrences(array)
+  array.map! { |item| item.downcase }
   array.uniq.each do |vehicle|
     puts "#{vehicle} => #{array.count(vehicle)}"
   end
 end
 
 vehicles = [
-  'car', 'car', 'truck', 'car', 'SUV', 'truck',
+  'car', 'Car', 'truck', 'car', 'SUV', 'truck',
   'motorcycle', 'motorcycle', 'car', 'truck'
 ]
 
