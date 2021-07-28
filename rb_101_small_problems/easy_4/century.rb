@@ -1,28 +1,16 @@
 def century(year)
   result = year % 10 == 0 ? (year/100) : ((year/100) + 1) 
-  add_suffix(result)
+  result.to_s + add_suffix(result)
 end
 
 def add_suffix(century)
-  if (11..13) === century
-    return century.to_s << "th"
-  end
-
-  if century > 100
-    if (11..13) === century % 100
-      return century.to_s << "th"
-    end
-  end
+  return "th" if (11..13) === century % 100
 
   case century % 10
-    when 1
-      century.to_s << "st"
-    when 2
-      century.to_s << "nd"
-    when 3
-      century.to_s << "rd"
-    else
-      century.to_s << "th"
+    when 1 then "st"
+    when 2 then "nd"
+    when 3 then "rd"
+    else "th"
   end
 end
 
