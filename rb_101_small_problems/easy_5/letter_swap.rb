@@ -5,6 +5,7 @@ end
 
 def swap(str)
   str = str.split(" ").map do |word|
+    swap_first_last_characters(word)
     # ------------------My attempt at doing a, b = b, a
     # first = word[0]
     # last = word[-1]
@@ -12,8 +13,6 @@ def swap(str)
     
     # word[0], word[-1] = word[-1], word[0]
     # word
-    swap_first_last_characters(word)
-
     # --------------------This was my clunky solution
     # word = word.chars
     # first = word.shift
@@ -21,8 +20,6 @@ def swap(str)
 
     # word.unshift(last)
     # word.push(first)
-
-    
 
     # word.join
   end
