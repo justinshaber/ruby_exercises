@@ -50,17 +50,28 @@ return an array of every (index+1) that has an odd number
 
 =end
 
-def switches(num)
+def create_lights(num)
   hash = {}
   1.upto(num) { |num_key| hash[num_key] = 0 }
+  hash
+end
 
+def on_switches(hash)
+  hash.select{ |key, value| value.odd? }.keys
+end
+
+def toggle_switches(num, hash)
   1.upto(num) do |divisor|
     hash.each do |key, value|
       hash[key] = (value + 1) if (key % divisor == 0)
     end
   end
-  
-  hash.select{ |key, value| value.odd? }.keys
+end
+
+def switches(num)
+  lights = create_lights(num)
+  toggle_switches(num, lights)
+  on_switches(lights)
 end
 
 p switches(5) == [1,4]
