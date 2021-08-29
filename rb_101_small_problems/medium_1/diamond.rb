@@ -42,6 +42,13 @@ increment by 2 from 1 up to n.
 7. reduce spaces by 1
 8. Go to step 5 until the number of stars is equal to num. 
 
+Need a new way to solve this
+
+something to do with the middle of the string
+two methods
+  acending
+  descending
+
 
 -- method --> 
 
@@ -54,6 +61,7 @@ def diamond(num)
   num_stars = 1
   num_spaces = num / 2
 
+  # It doesn't work with 1
   if num == 1
     puts STAR
     return
@@ -83,4 +91,4 @@ end
 
 
 
-diamond(9)
+diamond(1)
