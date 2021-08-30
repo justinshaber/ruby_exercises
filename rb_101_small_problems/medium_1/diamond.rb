@@ -50,44 +50,49 @@ two methods
   descending
 
 
+
 -- method --> 
 
 =end
 
-STAR = "*"
-SPACE = " "
-
 def diamond(num)
-  num_stars = 1
-  num_spaces = num / 2
-
-  # It doesn't work with 1
-  if num == 1
-    puts STAR
-    return
-  end
-
-  loop do
-    spaces = SPACE * num_spaces
-    stars = STAR * num_stars
-
-    puts spaces + stars + spaces
-    num_stars += 2
-    num_spaces -= 1
-    break if num_stars == num
-  end
-
-  loop do
-    spaces = SPACE * num_spaces
-    stars = STAR * num_stars
-
-    puts spaces + stars + spaces
-    num_stars -= 2
-    num_spaces += 1
-    break if num_stars < 0
-  end
 
 end
+
+# STAR = "*"
+# SPACE = " "
+
+# def diamond(num)
+#   num_stars = 1
+#   num_spaces = num / 2
+
+#   # It doesn't work with 1
+#   if num == 1
+#     puts STAR
+#     return
+#   end
+
+#   loop do
+#     spaces = SPACE * num_spaces
+#     stars = STAR * num_stars
+
+#     puts spaces + stars + spaces
+#     num_stars += 2
+#     num_spaces -= 1
+#     break if num_stars == num
+#   end
+
+#   loop do
+#     spaces = SPACE * num_spaces
+#     stars = STAR * num_stars
+
+#     puts spaces + stars + spaces
+#     num_stars -= 2
+#     num_spaces += 1
+#     break if num_stars < 0
+#   end
+
+# end
 
 
 
