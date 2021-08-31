@@ -56,8 +56,23 @@ two methods
 =end
 
 def diamond(num)
+  spaces = num / 2
+  
+  1.step(9, 2) do |step|
+    puts (" " * spaces) + ('*' * step)
+    spaces -= 1
+  end
+
+  spaces += 1
+
+  7.step(1, -2) do |step| 
+    spaces += 1
+    puts (" " * spaces) + ("*" * step)
+  end
 
 end
+
+diamond(9)
 
 # STAR = "*"
 # SPACE = " "
@@ -96,4 +111,4 @@ end
 
 
 
-diamond(1)
+#diamond(1)
