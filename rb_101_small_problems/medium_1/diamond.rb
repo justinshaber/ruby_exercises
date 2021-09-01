@@ -55,20 +55,33 @@ two methods
 
 =end
 
+def set_row(spaces, length)
+  ("*" * (length-(spaces * 2))).center((spaces * 2))
+end
+
 def diamond(num)
-  spaces = num / 2
+
+  space_count = num / 2
+
+  space_count.downto(0) do |num_spaces|
+    puts set_row(num_spaces, num)
+  end
+  1.upto(space_count) do |num_spaces|
+  puts set_row(num_spaces, num)
+  end
+  # spaces = num / 2
   
-  1.step(9, 2) do |step|
-    puts (" " * spaces) + ('*' * step)
-    spaces -= 1
-  end
+  # 1.step(9, 2) do |step|
+  #   puts (" " * spaces) + ('*' * step)
+  #   spaces -= 1
+  # end
 
-  spaces += 1
+  # spaces += 1
 
-  7.step(1, -2) do |step| 
-    spaces += 1
-    puts (" " * spaces) + ("*" * step)
-  end
+  # 7.step(1, -2) do |step| 
+  #   spaces += 1
+  #   puts (" " * spaces) + ("*" * step)
+  # end
 
 end
 
