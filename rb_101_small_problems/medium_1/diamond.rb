@@ -56,7 +56,8 @@ two methods
 =end
 
 def set_row(spaces, length)
-  ("*" * (length-(spaces * 2))).center((spaces * 2))
+  str = "*" * (length-(spaces * 2))
+  str.center(length)
 end
 
 def diamond(num)
