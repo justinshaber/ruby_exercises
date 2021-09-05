@@ -70,20 +70,6 @@ def diamond(num)
   1.upto(space_count) do |num_spaces|
   puts set_row(num_spaces, num)
   end
-  # spaces = num / 2
-  
-  # 1.step(9, 2) do |step|
-  #   puts (" " * spaces) + ('*' * step)
-  #   spaces -= 1
-  # end
-
-  # spaces += 1
-
-  # 7.step(1, -2) do |step| 
-  #   spaces += 1
-  #   puts (" " * spaces) + ("*" * step)
-  # end
-
 end
 
 diamond(9)
