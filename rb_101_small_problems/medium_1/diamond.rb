@@ -67,6 +67,7 @@ def diamond(num)
   space_count.downto(0) do |num_spaces|
     puts set_row(num_spaces, num)
   end
+  
   1.upto(space_count) do |num_spaces|
   puts set_row(num_spaces, num)
   end
