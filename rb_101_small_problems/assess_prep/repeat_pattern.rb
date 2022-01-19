@@ -1,4 +1,25 @@
 =begin
+###problem###
+
+input - 
+output - 
+
+###Examples###
+
+
+
+###Data Structures###
+
+
+###algorithm###
+
+
+###code###
+
+
+=end
+
+=begin
 Problem:
   Check if a string can be recreated using a sub string within
   it, and appending that substring repeatedly until you get the original string
