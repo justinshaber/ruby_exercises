@@ -1,6 +1,6 @@
 =begin
 ###problem###
-return the size of the longest palidrome substring within a given string
+return the size of the longest palindrome substring within a given string
 
 input - string
 output - an integer representing the length of the longest substring
@@ -24,10 +24,13 @@ Strings
 
 ###algorithm###
 initialize the longest substring palindrome to 0
-iterate through the string. For each iteration, take substrings of increasing
-  range starting with a length of 1.
-  Check each of these substrings to see if they are palindromes.
-  If they are, replace the longest sub_pal if it greater, move on if not.
+iterate through each character of the string.
+  For each iteration, take substrings of increasing range starting with a length of 1.
+    Check the substring to see if it is a palindrome.
+    If it is, reassign the length of this substring to longest_sub_pal if it is greater
+    move on if not.
+
+return longest
 
 ###code###
 
@@ -39,16 +42,16 @@ def is_pal?(string)
 end
 
 def longest_pal(string)
-  longest = 0
+  result = 0
 
   0.upto(string.size - 1) do |start|
-    1.upto(string.size - start) do |sub_str_length|
-      sub_str = string[start, sub_str_length]
-      longest = sub_str_length if is_pal?(sub_str) && sub_str_length > longest
+    1.upto(string.size - start) do |substr_length|
+      sub_str = string[start, substr_length]
+      result = substr_length  if is_pal?(sub_str) && substr_length > result
     end
   end
 
-  longest
+  result
 end
 
 p longest_pal("a") == 1
