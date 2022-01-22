@@ -65,7 +65,7 @@ return the size of the filtered array
 ###use select
 # selected_nums = []
   # odd_nums.each do |odd_num|
-  #   selected_nums << odd_num if is_not_prime?(odd_num)
+  #   selected_nums << odd_num if is_prime?(odd_num)
   # end
   
 # selected_nums.size
@@ -85,7 +85,7 @@ def is_prime?(num)
 end
 
 def odd_not_prime(num)
-  (1..num).select { |num| num.odd? && !(is_prime?(num)) }.size
+  (1..num).select { |i| i.odd? && !(is_prime?(i)) }.size
 end
 
 p odd_not_prime(15) == 3
