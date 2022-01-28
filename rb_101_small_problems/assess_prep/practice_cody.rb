@@ -43,3 +43,44 @@ featured(999_999_987) == 1_023_456_987
 featured(9_999_999_999) # -> There is no possible number that fulfills those requirements
 
 =end
+
+################################################################################################
+################################################################################################
+################################################################################################
+
+def is_anagram(s, t)
+  hash = {}
+  counter = 0
+  
+  loop do
+      current_char = s[counter]
+      if hash[current_char]
+          hash[current_char] += 1
+      else
+          hash[current_char] = 1
+      end
+      break if counter == s.size
+      counter += 1
+  end
+  
+  counter = 0
+  
+  loop do
+      current_char = t[counter]
+      if hash[current_char]
+          hash[current_char] -= 1
+          return false if hash[current_char] < 0
+      else
+          return false
+      end
+      break if counter == t.size
+      counter += 1
+  end
+
+  hash.values.none? { |value| value > 0 }
+end
+
+p is_anagram("anagram", "nagaram") == true
+p is_anagram("rat", "car") == false
+p is_anagram("anagram", "anagramx") == false
+p is_anagram("anagramx", "anagram") == false

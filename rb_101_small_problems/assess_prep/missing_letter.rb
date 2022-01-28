@@ -27,3 +27,5 @@ end
 
 p missing_letter(['a','b','c','d','f']) == 'e'
 p missing_letter(['O','Q','R','S']) == 'P'
+p missing_letter(['u','w','x','y','z']) == 'v'
+p missing_letter(['H','J','K','L']) == 'I'

@@ -62,10 +62,80 @@ triple_double(1222345, 12345) == 0
 # num1 has straight triple 2s but num2 has only a single 2
 =end
 
+=begin
+PROBLEM: Write a method that checks if there is a straight triple in the first number, and a straight double in the second number. Return 1 if so, 0 if no.
+
+i: two integers
+o: 1 or 0. 1 - if there is a straight triple in the num1 AND straight double in num2
+
+Examples/extras
+There cannot be a double in the first and triple in the second
+
+Data structures
+Array
+
+Algorithm
+Convert the integer into an array of string representations of the integers
+counter = 0
+compare triples
+  iterate up to the size of the array - 2
+  compare n, n + 1, n + 2
+    if equal there's a triple, return n
+    if not, move on
+    If it gets to array.size - 2, there is no triple, return false
+
+compare double of the same number!
+  iterate up to the size of the array - 1
+    compare n, n + 1 if n == tripled_num
+      if equal there's a double of the same num, return true
+      if not, move on
+      If it gets to array.size - 2, there is no double, return false
+      
+if there is a triple and a double of the same num return 1, return 0 if not
+
+
+
+=end
+
+def has_triple?(num)
+  num_array = num.to_s.chars
+  
+  0.upto(num_array.size - 2) do |idx|
+    if num_array[idx] == num_array[idx + 1]
+      if num_array[idx] == num_array[idx + 2]
+        return num_array[idx]
+      end
+    end
+  end
+  
+  false
+end
+
+def has_same_double?(num, tripled_num)
+  num_array = num.to_s.chars
+  
+  0.upto(num_array.size - 1) do |idx|
+    if num_array[idx] == tripled_num && num_array[idx] == num_array[idx + 1]
+      return true
+    end
+  end
+  
+  false
+end
+
+def triple_double(num1, num2)
+  tripled_num = has_triple?(num1)
+  
+  tripled_num && has_same_double?(num2, tripled_num) ? 1 : 0
+end
+
+
 p triple_double(451999277, 41177722899) == 1
-p triple_double(12345, 12345) == 0
 p triple_double(1222345, 12345) == 0
+p triple_double(12345, 12345) == 0
 p triple_double(666789, 12345667) == 1
+p triple_double(10560002, 100) == 1
+p triple_double(1112, 122) == 0
 
 ########################################################################
 ########################################################################
