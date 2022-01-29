@@ -39,28 +39,51 @@
 
 =end
 
-def is_pal?(string)
-  string == string.reverse 
-end
+# Can I set a floor so that I'm not even taking sub strings that are less than 4 characters?
 
-def valid_pal?(string)
-  string.size >= 4 && string.size.even?
-end
+# def is_pal?(string)
+#   string == string.reverse 
+# end
+
+# def find_reverse_substrings(string)
+#   valid_sub_pals = []
+
+#   0.upto(string.size - 1) do |start|
+#     4.upto(string.size - start) do |length|
+#       length.even? ? sub_str = string[start, length] : next
+#       valid_sub_pals << sub_str if is_pal?(sub_str)
+#     end
+#   end
+
+#   valid_sub_pals.map do |string|
+#     middle = string.size / 2
+#     [string[0, middle], string[middle..]]
+#   end.flatten.uniq
+# end
+
+#########ALTERNATE#########
 
 def find_reverse_substrings(string)
-  valid_sub_pals = []
+  chars = string.chars
+  substrings = []
+  chars.each_index do |index|
+    find_substrings(substrings, chars, index)
+  end
+  substrings
+end
 
-  0.upto(string.size - 1) do |start|
-    0.upto(string.size - start) do |length|
-      sub_str = string[start, length]
-      valid_sub_pals << sub_str if is_pal?(sub_str) && valid_pal?(sub_str)
+def find_substrings(substrings, chars, index)
+  2.upto(chars.size / 2) do |size|
+    break if index + (size * 2) > chars.size
+
+    current_substring = chars[index, size].join
+    comparison_substring = chars[index + size, size].join
+    next unless current_substring == comparison_substring.reverse
+
+    [current_substring, comparison_substring].each do |substring|
+      substrings << substring unless substrings.include?(substring)
     end
   end
-
-  valid_sub_pals.map do |string|
-    middle = string.size / 2
-    [string[0, middle], string[middle..]]
-  end.flatten.uniq
 end
 
 p find_reverse_substrings('1221345543') == ["12", "21", "345", "543", "45", "54"]
