@@ -1,3 +1,8 @@
+# Attempt: 1
+# Start:  10:40
+# End:    11:09
+# Time:   29 minutes
+
 =begin
 Problem overview:
 - We have a stack - which is a list of value that grows and shrinks in a FIFO way
@@ -17,13 +22,10 @@ Create a stack-and-register language with the following commands
   PRINT Print the register value
 
 
-
-
-
 --------------------------PROBLEM----------------------------------------
 Explicit Rules:
   - initialize register to 0
-  -
+  - 
 Implicit Rules:
 Questions:
 --------------------------EXAMPLES---------------------------------------
@@ -40,14 +42,81 @@ methods for commands
 Higher-Level ==> 
 
 initialize register to 0, stack array
-method with add, sub, mult, div, mod
-method with push and pop
-method with print
 
 split string by spaces, put them into an array
 iterate over the array
   for each string perform the aligning action
 
+brute force each operation
+ex: if 'PUSH' then stack.push(reg_val)
+
 -- method --> 
 
 =end
+
+def minilang(string)
+  reg_val = 0
+  stack = []
+
+  string.split(" ").each do |command|
+    case command
+      when 'ADD'   then reg_val += stack.pop
+      when 'SUB'   then reg_val -= stack.pop
+      when 'MULT'  then reg_val *= stack.pop
+      when 'DIV'   then reg_val /= stack.pop
+      when 'MOD'   then reg_val %= stack.pop
+      when 'PUSH'  then stack << reg_val
+      when 'POP'   then reg_val = stack.pop
+      when 'PRINT' then puts reg_val
+      else              reg_val = command.to_i
+    end
+    # puts "reg_val = #{reg_val}" 
+    # puts "stack = #{stack}"
+  end
+end
+
+p (3 + (4 * 5) - 7) / (5 % 3)
+
+=begin
+  result of (3 + (4 * 5) - 7) / result of (5 % 3)
+  16 / 2
+  reg = 16
+  stack = 2
+
+  3 + (4 * 5) - 7
+  3 + 20 - 7
+  23 - 7
+  16
+  reg = reg - stack
+  16 = 23 - 7
+
+
+  3 PUSH 5 MOD PUSH 7 PUSH 3 PUSH... DIV PRINT
+=end
+
+minilang('3 PUSH 5 MOD PUSH 7 PUSH 3 PUSH 4 PUSH 5 MULT ADD SUB DIV PRINT')
+# minilang(' DIV PRINT')
+
+# minilang('PRINT')
+# # 0
+# minilang('5 PUSH 3 MULT PRINT')
+# # 15
+# minilang('5 PRINT PUSH 3 PRINT ADD PRINT')
+# # 5
+# # 3
+# # 8
+# minilang('5 PUSH POP PRINT')
+# # 5
+# minilang('3 PUSH 4 PUSH 5 PUSH PRINT ADD PRINT POP PRINT ADD PRINT')
+# # 5
+# # 10
+# # 4
+# # 7
+# minilang('3 PUSH PUSH 7 DIV MULT PRINT ')
+# # 6
+# minilang('4 PUSH PUSH 7 MOD MULT PRINT ')
+# # 12
+# minilang('-3 PUSH 5 SUB PRINT')
+# # 8
+# minilang('6 PUSH')
+# # (nothing printed; no PRINT commands)
