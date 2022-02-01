@@ -38,27 +38,31 @@ output the string
 
 KEYWORDS = {
   adjective: %w(hungry sexy sleepy ugly),
-  noun: %w(butthole doplhin pillow slimeball),
+  noun: %w(bubbles dolphin pillow slimeball),
   verb: %w(farts honks bites licks),
   adverb: %w(easily lazily noisily excitedly)
 }
 
-def madlib(text)
-  text = text.gsub(/[\%\{\}\,]/, "")
-  line_arr = text.split(/\n/)
-
-  line_arr.map! do |line|
-    line.split(" ").map do |word|
-      if KEYWORDS[word.to_sym]
-        KEYWORDS[word.to_sym].sample
-      else
-        word
-      end
-    end.join(" ")
-  end
-  
-  puts line_arr.join("\n")
+KEYWORDS.each do | pair |
+  p pair
 end
 
-file = File.read('madlib.txt')
-madlib(file)
+# def madlib(text)
+#   text = text.gsub(/[\%\{\}\,]/, "")
+#   line_arr = text.split(/\n/)
+
+#   line_arr.map! do |line|
+#     line.split(" ").map do |word|
+#       if KEYWORDS[word.to_sym]
+#         KEYWORDS[word.to_sym].sample
+#       else
+#         word
+#       end
+#     end.join(" ")
+#   end
+
+#   puts line_arr.join("\n")
+# end
+
+# file = File.read('madlib.txt')
+# madlib(file)
