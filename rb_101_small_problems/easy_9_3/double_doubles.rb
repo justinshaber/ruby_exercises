@@ -10,31 +10,36 @@ split the string in half, compare
   integer if equal
 =end
 
+def half(string)
+  middle = string.size / 2 
+  [string[0, middle], string[middle..]]
+end
+
 def twice(int)
   double = int*2
   return double if int.to_s.size.odd?
 
-  int_str_arr = int.to_s.chars
-
   # find the middle of a string
-  # half = int_str.size / 2
-  # first = int_str[0, half]
-  # second = int_str[half..]
-
-  first, second = int_str_arr.partition { |elem| int_str_arr.index(elem) <= (int_str_arr.size / 2) }
+  first, second = half(int.to_s)
 
   p first
   p second
+
+  int_str_arr = int.to_s.chars
+  # first, second = int_str_arr.partition.with_index do |elem, idx|
+  #   idx < (int_str_arr.size / 2)
+  # end
+
   first == second ? int : double
 end
 
-p twice(37) == 74
-p twice(44) == 44
-p twice(334433) == 668866
-p twice(444) == 888
-p twice(107) == 214
-p twice(103103) == 103103
-p twice(3333) == 3333
+# p twice(37) == 74
+# p twice(44) == 44
+# p twice(334433) == 668866
+# p twice(444) == 888
+# p twice(107) == 214
+# p twice(103103) == 103103
+# p twice(3333) == 3333
 p twice(7676) == 7676
 p twice(123_456_789_123_456_789) == 123_456_789_123_456_789
-p twice(5) == 10
+# p twice(5) == 10
