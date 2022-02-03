@@ -21,6 +21,7 @@
 =end
 
 def reverse!(list)
+  ###########################
   # start = 0
   # endex = -1
 
@@ -31,13 +32,20 @@ def reverse!(list)
   # end
 
   # list
-
+###########################
   # list.sort_by!.with_index { |_, idx | -idx }
+###########################
+  # list.sort! { 1 }
+###########################
+  # temp = []
+  # temp << list.pop until list.empty?
+  # temp.each { |element| list << element }
 
-  temp = []
-  temp << list.pop until list.empty?
-  temp.each { |element| list << element }
-
+  # list
+  ###########################
+  0.upto(list.size - 1) do |index|
+    list.insert(index, list.pop)
+  end
   list
 end
 
