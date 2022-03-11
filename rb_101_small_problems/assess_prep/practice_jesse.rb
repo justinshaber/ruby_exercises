@@ -39,8 +39,8 @@ Example:
 
 p missing_letter(['a','b','c','d','f']) == 'e'
 p missing_letter(['O','Q','R','S']) == 'P'
-p missing_letter(["a","b","c","d","f"]) == "e"
-p missing_letter(["O","Q","R","S"]) == "P"
+p missing_letter(["u","v","x","y","z"]) == "w"
+p missing_letter(["o","q","r","s"]) == "p"
 
 ########################################################################
 ########################################################################
@@ -60,6 +60,13 @@ triple_double(451999277, 41177722899) == 1
 
 triple_double(1222345, 12345) == 0
 # num1 has straight triple 2s but num2 has only a single 2
+
+p triple_double(451999277, 41177722899) == 1
+p triple_double(1222345, 12345) == 0
+p triple_double(12345, 12345) == 0
+p triple_double(666789, 12345667) == 1
+p triple_double(10560002, 100) == 1
+p triple_double(1112, 122) == 0
 =end
 
 =begin
