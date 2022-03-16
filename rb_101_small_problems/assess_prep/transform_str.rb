@@ -1,5 +1,5 @@
 =begin
-P: Given a string, reverse the order of words and change all cases. Maintain
+P: Given a string, reverse the order of words and change all cases. Maintain multiple spaces
   i: Sting
   o: new string
 E+R:
@@ -39,23 +39,36 @@ Algo:
 
 
 def string_transformer(str)
-  swapped = str.swapcase.split(" ")
-  result = ''
-  str = str.reverse
-  str.each_char.with_index do |char, idx|
-    if char == " "
-      result << char
-      next
-    end
-    next unless str[idx + 1] == " " || str[idx + 1] == nil
-    result << swapped.pop
-  end
+  # swapped = str.swapcase.split(" ")
+  # result = ''
+  # str = str.reverse
+  # str.each_char.with_index do |char, idx|
+  #   if char == " "
+  #     result << char
+  #     next
+  #   end
+  #   next unless str[idx + 1] == " " || str[idx + 1] == nil
+  #   result << swapped.pop
+  # end
   
-  result
+  # result
+
+  arr = str.chars.slice_when { |a, b| (a != ' ' && b == ' ') || (a == ' ' && b != ' ')}.map(&:join)
+  arr.reverse.map{ |word| word.swapcase }.join 
 end
 
-p string_transformer("Hello World") #== "wORLD hELLO"
-p string_transformer("Hello   World  I   love you") #== "YOU   LOVE  i   wORLD hELLO"
-p string_transformer("       Hello   World  I   love you  ") #== "       YOU   LOVE  i   wORLD hELLO  "
+=begin
+Given a string, reverse the order of words and change all cases. Maintain multiple spaces
+
+Handle multiple spaces:
+  no - "word1***word2**word3*" => "WORD3***WORD2**WORD1*"
+  yes - "word1***word2**word3*" => "*WORD3**WORD2***WORD1"
+
+
+=end
+
+p string_transformer("Hello World") == "wORLD hELLO"
+p string_transformer("Hello   World  I   love you") == "YOU LOVE   i  wORLD   hELLO"
+p string_transformer("       Hello   World  I   love you  ") == "  YOU LOVE   i  wORLD   hELLO       "
 p string_transformer("You Know When  THAT  Hotline Bling") == "bLING hOTLINE  that  wHEN kNOW yOU"
 
