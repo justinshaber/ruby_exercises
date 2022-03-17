@@ -83,7 +83,7 @@ return the size of the filtered array
 
 def is_prime?(num)
   return false if num < 2
-  (2..num/2).none? { |diviser| num % diviser == 0 }
+  (2..Math.sqrt(num)).none? { |diviser| num % diviser == 0 }
 end
 
 def odd_not_prime(num)
