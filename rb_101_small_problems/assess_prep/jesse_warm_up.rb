@@ -53,6 +53,8 @@ end
 longest
 end
 
+#  Given a string as input, find the longest substring that does not have any consecutive repeating characters.
+
 p find_longest_substring("aaaaa") == "a" 
 p find_longest_substring('aaaaaazz') == 'az'
 p find_longest_substring('bookkeeper') == "eper"
@@ -154,15 +156,26 @@ Code:
 #   return str
 # end
 
+##############################################################
+##############################################################
+
+# Write a method same_char_collapse that takes in a string and 
+# returns a collapsed version of the string. 
+
+# To collapse the string, 
+# we repeatedly delete 2 adjacent characters that are the same until 
+# there are no such adjacent characters. If there are multiple pairs that 
+# can be collapsed, delete the leftmost pair first before
+# moving onto the next pair. 
+
+# For example, we take the 
+# following steps to collapse "zzzxaaxy": zzzxaaxy -> zxaaxy -> zxxy -> zy
+
 # p same_char_collapse("zzzxaaxy") == "zy"
 # p same_char_collapse("uqrssrqvtt") == "uv"
 # p same_char_collapse("aabcddce") == "be"
 # p same_char_collapse("uqrssrqvtt") == "uv"
 
-##############################################################
-##############################################################
-##############################################################
-##############################################################
 ##############################################################
 ##############################################################
 
@@ -183,3 +196,13 @@ Code:
 # p alphabet_score('what time are we climbing up the volcano') == 'volcano'
 # p alphabet_score('take me to semynak') == 'semynak'
 # p alphabet_score('aa b') == 'aa'
+
+##############################################################
+##############################################################
+
+#  Given a string as input, find the longest substring that does not have any consecutive repeating characters.
+
+# p find_longest_substring("aaaaa") == "a" 
+# p find_longest_substring('aaaaaazz') == 'az'
+# p find_longest_substring('bookkeeper') == "eper"
+# p find_longest_substring('leetucebox') == "etucebox"
