@@ -1,0 +1,29 @@
+PROBLEM
+  OVERVIEW: Write a program that takes a list of possible anagrams and a word, and returns a new list containing anagrams of the given word.
+
+  INPUT: Array of strings
+  OUTPUT: Array of strings that are anagrams of the comparison word.
+
+EXAMPLES:
+  RULES
+    - anagram uses the exact same letters the exact amount of times.
+    - case agnostic
+
+DATA STRUCTURES
+  - Hash to determine number of occurances of a letters
+
+ALGORITHM
+  - Anagram Class
+    - constructor
+      accepts a single string as an argument
+    - Anagram#match
+      - accepts an array as an argument
+      - iterates through the passed array
+        - if current word is an anagram of comparison word, add it to results array
+      - return results array
+
+  - anagram?
+    - get a list of each unique character in the word
+    - create a hash with the letter as key, number as value
+
+CODE

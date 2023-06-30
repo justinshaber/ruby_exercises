@@ -1,0 +1,51 @@
+PEDAC
+
+PROBLEM
+Write a program to determine whether a triangle is equilateral, isosceles, or scalene.
+  - An equilateral triangle has all three sides the same length.
+  - An isosceles triangle has exactly two sides of the same length.
+  - A scalene triangle has all sides of different lengths.
+  - For a shape to be a triangle at all, all sides must be of length > 0
+    - length can be float or integer
+  - the sum of the lengths of any two sides must be greater than the length of the third side.
+
+
+  INPUT:
+    3 integers - 3 parameters, or an array
+  OUTPUT
+    string - "isosceles", "scalene", "equilateral"
+
+EXAMPLES
+  Triangle.new(int1, int2, int3)
+  Triangle#kind => string
+  constructor
+    => ArgumentError if:
+      - any side is <= 0
+      - the sum of the lengths of any two sides must be greater than the length of the third side.
+
+DATA STRUCTURES
+  Array
+
+ALGORITHM
+  OVERVIEW:
+      Triangle class
+        - constructor
+        - #kind method
+  Constructor
+    - accepts three arguments
+    - puts them into an array
+    - verifies the three passed arguments are valid
+      - all greater than 0
+      - sum of an two is greater than the third
+  - Triangle#kind
+    call Array.uniq.size
+      if 3 => "scalene"
+      if 2 => "isosceles"
+      if 1 => "equilateral"
+    
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+PEDAC
+
+PROBLEM
+  Compute the Hamming distance between two strands of DNA.
+  Iterate simultaneously through two strings, counting the number of differences between them.
+
+  INPUT:
+    two strings
+  OUTPUT:
+    an integer
+
+EXAMPLES
+  EXPLICIT RULES
+    - count differences between two strings
+    - if strings are different lengths, only iterate the length of the shorter string
+  IMPLICIT RULES
+    - strings are not modified
+    - empty strings returns 0
+
+DATA STRUCTURES
+  - Arrays
+  - each_char (with index?)
+
+ALGORITHM
+  DNA Class
+    - accepts one string as an argument upon initialization
+  DNA#hamming_distance
+    - called by an instance of DNA
+    - accepts one string as an argument
+    - returns an integer
+CODE
+  
+
+    
+
