@@ -1,0 +1,24 @@
+PROBLEM
+  OVERVIEW:
+    Write a program that generates random "robot names" in the form of two uppercase letters and 3 integers 0-9 e.g. AA000.
+
+  INPUT: none
+  OUTPUT: none
+
+EXAMPLES/RULES
+  Solutions should not use the same name twice.
+  A name can be reset.
+
+DATA STRUCTURES
+  regex, arrays
+
+ALGORITHM
+  Robot Class
+    constructor
+      generates a random name...helper method
+    #name
+      getter
+    #reset
+      resets the Robot's name.
+      
+CODE

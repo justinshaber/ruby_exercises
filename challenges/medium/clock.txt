@@ -1,0 +1,4 @@
+if hours are greater than 24
+  hours % 24 => add/sub remainder
+if minutes are greater than 60
+  minutes.divmod(60) => [hours, minutes]
