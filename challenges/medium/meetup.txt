@@ -1,0 +1,29 @@
+PROBLEM
+    OVERVIEW
+      - Write a program that takes a Month, Year, Day of the Week, and descriptor and returns the date of the meetup.
+
+    INPUT:
+      constructor - (Year, Month) in integers
+      #day - (Day of the week, descriptor) - both strings
+
+    OUTPUT
+      #day - a new date object
+        - Date.civil(year, month, day) - in integers
+
+  EXAMPLES/RULES
+    Strings are case insensitive
+    Descriptors - First, Second, third, fourth, fifth, last, teenth
+    Teenth - there are 7 teenths in a month.
+    If 5th day does not work, return nil
+  
+  ALGORITHM
+    Date#cwday - Returns the day of calendar week (1-7, Monday is 1)
+    Date#valid_date?(year,month,day)
+
+    Cycle through each day of the month
+      - Go until date is not valid
+      - Put each '[week]day' in an array
+    Get the correct day.
+
+    
+    
