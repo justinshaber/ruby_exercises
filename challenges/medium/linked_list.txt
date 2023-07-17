@@ -1,0 +1,21 @@
+PROBLEM
+
+  OVERVIEW
+    - Create a singly linked list whose elements may contain a range of data. Provide methods to reverse the list and convert to/from an array.
+
+  Input:
+    #new
+      - integers
+      - nothing
+  Output:
+    #next - next element in the list, nil if none
+    #tail? - 
+    #datum - returns the data at the current element's position
+    #size - size
+    #empty? - boolean t/f
+    #push(item) - add an item to the list
+    #pop(int) - remove an item from the list
+    #head - alias for head?
+    #peek - last one in
+    #from_a(arr) - class method...deconstructs array and creates new SimpleLinkedList instance.
+    #reverse - reverse the list. Does not need to be same object.
