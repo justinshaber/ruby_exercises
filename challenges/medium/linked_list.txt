@@ -2,20 +2,50 @@ PROBLEM
 
   OVERVIEW
     - Create a singly linked list whose elements may contain a range of data. Provide methods to reverse the list and convert to/from an array.
+    - A singly linked list contains a series of elements which contain:
+      - a piece of data
+      - a 'next' field that points to the next element in the list
 
   Input:
-    #new
+    Element#new
       - integers
       - nothing
+    
   Output:
+
+RULES/EXAMPLES
+  Element
     #next - next element in the list, nil if none
-    #tail? - 
+    #tail? - returns boolean if it's the last item in the list
     #datum - returns the data at the current element's position
-    #size - size
-    #empty? - boolean t/f
+  SimpleLinkedList
+    #size - number of elements in the linked list
+    #empty? - boolean t/f if there aren't any elements in the list
     #push(item) - add an item to the list
     #pop(int) - remove an item from the list
-    #head - alias for head?
-    #peek - last one in
-    #from_a(arr) - class method...deconstructs array and creates new SimpleLinkedList instance.
+    #head - returns the most recently pushed element
+    #peek - returns the datum of head
+    #to_a - returns an array of all element's datums
     #reverse - reverse the list. Does not need to be same object.
+
+    self.from_a(arr)
+      - class method
+      - deconstructs array and creates new SimpleLinkedList instance linking each array element
+
+  DATA STRUCTURES
+  
+  ALGORITHM
+    class Element
+      #new
+        - Accepts two arguments
+          - first argument sets the value of datum
+          - second argument is optional
+            - sets the value of 'next'
+              - set it to 'nil' if there is no 'head' i.e. is the first item in the list
+    class SimpleLinkedList
+      #new
+        - ??
+      #push
+        - creates a new Element
+        - sets current head
+

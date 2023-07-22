@@ -1,56 +1,43 @@
-require 'pry'
-
 class Element
+  attr_reader :datum, :next
 
   def initialize(e1, e2=nil)
-    @e1 = e1
-    @e2 = e2
-  end
-
-  def datum
-    @e1
-  end
-
-  def next
-    @e2
-  end
-
-  def next=(next_e)
-    @e2 = next_e
+    @datum = e1
+    @next = e2
   end
 
   def tail?
-    @e2.nil?
+    @next.nil?
   end
 end
 
 class SimpleLinkedList
-  def initialize
-    @list = []
-  end
+  attr_reader :head
 
-  def empty?
-    @list.empty?
+  def initialize
+    @head = nil
   end
 
   def size
-    @list.size
+    return 0 if empty?
+
+    current = head
+    counter = 1
+
+    until current.tail? do
+      counter += 1
+      current = current.next
+    end
+
+    counter
   end
 
-  def push(new_e)
-    # elem = Element.new(new_e)
-    # @list.push elem
-    # elem.next = @list[-2] unless @list[-2].nil?
-
-    elem = Element.new(new_e)
-    @list.unshift elem
-    elem.next = @list[1] unless @list[1].nil?
+  def empty?
+    head.nil?
   end
 
-  def head
-    # @list.last
-
-    @list.first
+  def push(elem)
+    @head = Element.new(elem, head)
   end
 
   def peek
@@ -58,30 +45,80 @@ class SimpleLinkedList
   end
 
   def pop
-    # @list.pop.datum
-
-    @list.unshift.datum
+    current = head
+    @head = head.next
+    current.datum
   end
 
   def self.from_a(arr)
-    # new_list = SimpleLinkedList.new
-    # arr.reverse.each {|datum| new_list.push datum} unless arr.nil?
-    # new_list
-
     new_list = SimpleLinkedList.new
-    arr.each {|datum| new_list.push datum} unless arr.nil?
+    arr.reverse.each {|datum| new_list.push datum} unless arr.nil?
     new_list
   end
 
   def to_a
-    # @list.map { |elem| elem.datum }.reverse
+    return [] if empty?
 
-    @list.map { |elem| elem.datum }
+    current = head
+    arr = []
+
+    loop do
+      arr << current.datum
+      break if current.tail?
+      current = current.next
+    end
+
+    arr
   end
 
   def reverse
-    # SimpleLinkedList.from_a(self.to_a.reverse)
-
-    SimpleLinkedList.from_a(self.to_a.reverse)
+    arr = self.to_a
+    self.class.from_a(arr.reverse)
   end
 end
+
+# class SimpleLinkedList
+#   def initialize
+#     @list = []
+#   end
+
+#   def empty?
+#     @list.empty?
+#   end
+
+#   def size
+#     @list.size
+#   end
+
+#   def push(new_e)
+#     elem = Element.new(new_e)
+#     @list.push elem
+#     elem.next = @list[-2] unless @list[-2].nil?
+#   end
+
+#   def head
+#     @list.last
+#   end
+
+#   def peek
+#     empty? ? nil : head.datum
+#   end
+
+#   def pop
+#     @list.pop.datum
+#   end
+
+#   def self.from_a(arr)
+#     new_list = SimpleLinkedList.new
+#     arr.reverse.each {|datum| new_list.push datum} unless arr.nil?
+#     new_list
+#   end
+
+#   def to_a
+#     @list.map { |elem| elem.datum }.reverse
+#   end
+
+#   def reverse
+#     SimpleLinkedList.from_a(self.to_a.reverse)
+#   end
+# end
