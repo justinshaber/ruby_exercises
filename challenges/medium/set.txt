@@ -1,0 +1,31 @@
+PROBLEM
+  Create a data strcucture that has the behavior of a 'set'. The actual internal implementation of how the set works is not important.
+
+EXAMPLES/RULES
+  There are only numbers in a set
+  CustomSet
+    #empty? - returns boolean true/false if set contains integers or not
+    #contains? - returns t/f
+    #subset? - t/f if calling object is a subset of the passed argument
+    #eql? - tests if two CustomSet objects contain the same integers
+      - multiples don't matter e.g. [1,2,2,1] == [1,2] == [2,1]
+      - okay if they are different instances
+    #add - add the passed arg to the calling set
+      if set already contains value, doesn't add another
+    #intersection 
+      - iterates through calling set
+      - returns a new set with values that appear in set passed as argument
+    #difference
+      - iterates through calling set
+      - returns a new set with values that don't appear in set passed as argument
+    #union
+      - iterates through a calling set
+      - returns a new set with all unique values from calling/passed sets
+
+    #disjoint? - t/f if ... ????
+
+
+DATA STRUCTURES
+  Arrays?
+
+ALGORITHM

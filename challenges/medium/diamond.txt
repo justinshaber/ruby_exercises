@@ -1,0 +1,37 @@
+PROBLEM
+
+  OVERVIEW: Output a text diamond that goes from "A" to the passed string letter argument, then back to "A"
+
+  input: A single capital letter A-Z
+  output: A text based diamond
+
+Examples/Rules
+  One class method that takes a string argument A-Z
+  Letters are always capitalized
+  All resulting strings are of odd length
+    - the apex is the letter position of the alphabet * 2 - 1
+      - i.e. J is the 10th letter of the alphabet. The final string will be 19 chars long. A is the 1st letter of the alphabet. The final string will be 1 char long.
+
+DATA STRUCTURES
+  arrays
+
+ALGORITHM
+  create a results array
+  Find the length of the apex string - i
+  Left counter starts at 0, right counter starts at -1
+
+  Repeat n times where n is the position of the apex letter in the alphabet
+  Begin with apex letter, iterate until A is done
+    create a string of length i
+    mutate array starting with apex letter
+    put this in a results array
+    iterate until A is done
+  
+  Build final array
+    results[..-2].reverse.each { |str| arr << str }
+  
+  Join with new line
+  
+  
+
+
