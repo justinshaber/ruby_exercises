@@ -1,0 +1,34 @@
+PROBLEM
+  OVERVIEW: write a program to determine whether a triangle is equilateral, isosceles, or scalene
+  INPUT:
+    Triangle#initialize takes three integer arguments, an integer for each side.
+  OUTPUT:
+    Triangle#initialize outputs an error if invalid combination of sides are passed.
+    Triangle#kind outputs a string
+
+EXAMPLES
+  RULES
+   Triangle#initialize outputs an error if invalid combination of sides are passed.
+    - ArgumentError produced when sides are invalid
+      - All sides must be greater than 0
+      - sum of lengths of two sides must be greater than length of third side
+   Triangle#kind outputs a string
+    - 'equilateral' all sides same
+    - 'isosceles' exactly two sides of same length
+    - 'scalene' all sides different length
+  Lengths can be integers or floats
+
+DATA STRUCTURES
+  Case statements, arrays
+ALGORITHM
+  class Triangle
+    #initialize
+      # raise an error if sides are invalid
+      # save sides to an arrays
+    #kind
+      Call uniq.size
+      Case statement 
+        - 3 - scalene
+        - 2 - isosceles
+        - 1 - equilateral
+CODE
