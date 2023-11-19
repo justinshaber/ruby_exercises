@@ -1,0 +1,33 @@
+PROBLEM
+  OVERVIEW: Write a program that accepts a word string and calculates its scrabble value
+  INPUT: string
+  OUTPUT: integer - the value of the word in scrabble terms.
+
+EXAMPLES
+  RULES
+    - letters only, no other chars
+    - see grid for letter values
+    - case insensitive
+  METHODS
+    #initialize
+      - accepts one string argument
+    #score
+      - calculates/returns the scrabble value of the word
+      - accepts no arguments
+
+DATA STRUCTURES
+  Hash to store values of each letter in the alphabet
+
+ALGORITHM
+  #initialize
+    INITIALIZE instance var to passed word
+    CLEAN word
+      - remove anything that is not A-Z
+      - lowercase word
+  #convert
+    DOWNCASE
+    SELECT only a-z
+  #score
+    ITERATE and ACCUMULATE using #reduce
+      accumulator is zero
+      add value of current letter

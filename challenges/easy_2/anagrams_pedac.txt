@@ -1,0 +1,43 @@
+PROBLEM
+  OVERVIEW: Write a program that takes a takes a string, iterates through an array of strings, and returns a new array with strings that are an anagram of the given word.
+  INPUT: a string and an array
+  OUTPUT: a new array with anagrams of the given word
+
+EXAMPLES
+  RULES
+    - no matches returns []
+    - identical word is not an anagram
+    - case insensitive
+  EXPLICIT METHODS
+    ANAGRAM#initialize
+      - accepts one string argument
+      - initializes instance variable referencing passed string
+    ANAGRAM#match
+      - returns a new array with matches
+  HELPER METHODS
+    ANAGRAM#anagram?
+      - verifies if a word is an anagram of a given word
+
+DATA STRUCTURES
+  Hash to keep a count of each letter
+
+ALGORTHIM
+  #initialize
+    INITIALIZE lowercase string
+    INITIALIZE instance var that references anagram hash Key (call method here)
+  #match
+    SELECT
+      ITERATE through passed array
+        SELECT if
+          - lowercased word is an anagram
+          - lowercased word is not same as og_word
+
+  #verify
+    COMPARE HASHES
+  #hash
+    CREATE a Hash
+      - keys will be uniq chars
+      - values will be an integer representing occurances of the char
+    ITERATE through each char
+    HASH[char] += 1
+

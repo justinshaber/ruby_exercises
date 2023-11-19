@@ -1,0 +1,37 @@
+PROBLEM:
+  OVERVIEW: Given two strands of DNA, calculate the hamming distance.
+  INPUT: two strings each representing a 'section' of DNA
+  OUTPUT: integer representing the hamming distance
+
+EXAMPLES
+  RULES
+    - if two strings are unequal in length, compare using the length of the shorter string.
+    - empty strings returns 0
+    - equal strings returns 0
+    - og string is not mutated
+
+DATA STRUCTURES
+  METHODS: 
+    DNA#initialize
+      - accepts one string argument
+      - initializes an instance variable to reference the passed string
+
+    DNA#hamming_distance
+      - accepts one string as an argument
+      - iterates through both strings, the length of the shorter string
+      - counts the number of differences
+      - returns an integer
+  STRUCTURES
+    Arrays
+
+ALGORITHM
+  DNA#hamming_distance
+    FIND ITERATION LENGTH
+      shortest = [string1.size, string2.size].min
+    INITIALIZE COUNTER
+    INITIALIZE MUTATIONS
+    LOOP
+      increment mutations if different
+      increment counter
+    RETURN mutations
+
