@@ -1,0 +1,45 @@
+PROBLEM: Write a program that outputs the 99 bottles song
+  input:
+    - 1 integer - the song lyric with that many bottles
+      or
+    - 2 integers (starting bottle number, ending bottle number)
+  output: String
+
+EXAMPLES/RULES
+  4 lyric versions
+    - 3+ bottles, 2 bottles, 1 bottle, no bottles
+      __ bottle_ of beer on the wall, __ bottle_ of beer
+      Take ___ down and pass it around, __ bottle_ of beer on the wall
+      (Go to the store and buy some more)
+  METHODS - all class methods
+    verse(num)
+      - outputs the current num
+    verses(start, end)
+      - starts at start and outputs until it reaches the end, inclusive
+    lyrics
+      - outputs 99 to 0
+
+DATA STRUCTURES
+  Arrays
+  Case Statements
+  HEREDOC
+
+ALGORITHM
+  Class#verse(verse_num)
+    - INTERPOLATE STRING
+    
+  Class#verses(start, end)
+    - INITIALIZE results arr
+    start #DOWNTO end
+      PUSH to results verse(current_num)
+    - RETURN results.join("\n")
+
+  Class#quantity(num)
+    - case statement
+    - RETURN
+  
+  Class#take_down(num)
+    - case statement
+  
+
+  

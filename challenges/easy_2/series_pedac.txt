@@ -1,0 +1,35 @@
+PROBLEM:
+  OVERVIEW: Given a string of digits, return an array with 'slices' of consecutive numbers of specified length.
+
+  INPUT:
+    - calling object - Series object
+    - called method - takes one integer argument
+  OUTPUT: array - each element is a sub array that contains X integers that are consecutive slices of the passed number where X is the given length
+
+EXAMPLES/RULES
+  - Raise ArgumentError if slice length is greater than string_number length
+  - series = Series.new('982347')
+    expected = [[9, 8, 2], [8, 2, 3], [2, 3, 4], [3, 4, 7]]
+    assert_equal expected, series.slices(3)
+  - results sub arrays contain integers not strings
+
+DATA STRUCTURES
+  arrays
+
+ALGORITHM
+  #initialize
+    INITIALIZE string_num
+  #slices(slice_size)
+    RAISE ArgumentError if slice_size > string_num.size
+    INITIALIZE results_arr
+    INITIALIZE start_idx
+    LOOP
+      PUSH string_num[start_idx, slice_size]
+      break if [start_idx..(-1)].size == slice_size
+      INCREMENT start_idx
+    MAP
+      CHARS
+      to_i
+    
+
+    

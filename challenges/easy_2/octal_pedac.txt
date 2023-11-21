@@ -1,0 +1,37 @@
+PROBLEM:
+  OVERVIEW - Write a program that converts an integer from base octal to base decimal without using built in functionality.
+  INPUT: string representation of a base 8 integer
+  OUTPUT: integer - base 10 equivalent
+
+EXAMPLES
+  RULES:
+    - cannot use built in functionality
+    - if string contains any input that is not 0-7, RETURN 0
+    233 in base 10 is 233
+    233 in base 8 is 155
+      2 * 8^2 = 128
+      3 * 8^1 = 24
+      3 * 8^0 = 3
+              ______ 155
+
+    123 in base 10 is 233
+    123 in base 8 is
+      1 * 8^2 = 64
+      2 * 8^1 = 16
+      3 * 8^0 = 3
+              ______ 83
+DATA STRUCTURES
+  Array
+
+ALGORITHM
+  #initialize
+    SET value to 0 if string.to_i != string
+  #to_decimal
+    CONVERT to array of chars and REVERSE
+    MAP WITH INDEX
+      convert to integer
+      num * 8^index
+    RETURN SUM
+    
+
+
