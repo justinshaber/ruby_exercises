@@ -1,0 +1,48 @@
+PROBLEM
+  OVERVIEW: Write a program that randomly generates or resets a robot's name.
+
+  input: none
+  output: string - robot name
+
+EXAMPLES/RULES
+  Robot name follows the format - AA111 or A-Z A-Z 0-9 0-9 0-9
+    - note: uppercase
+  A new name must be randomly generated when a new Robot object is instantiated
+  If the name is already chosen, choose another name.
+    stored in a class variable
+
+  There is something about seed and random.
+
+DATA STRUCTURES
+  Arrays
+
+ALGORITHM
+  Robot#initialize
+    - no args
+    - generate a new name
+  Robot#generate_new_name
+    - INITIALIZE new_str
+    - 2 TIMES
+      - GET random number 0-25
+      - PUSH in ALPHABET[random_num]
+    - 3 TIMES
+      - PUSH random number 0-9
+    RETURN new_str
+
+  Robot#set_name
+    @name = generate_new_name
+
+  Robot#name
+    IF @name.nil? 
+      set_name
+    else
+      @name
+  
+  Robot#reset
+    @name = nil
+
+PROBLEM
+  Whena a new name is instantiated, it should choose a new name if the generated name has already been used
+  INITIALIZE
+    
+

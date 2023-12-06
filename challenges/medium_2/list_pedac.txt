@@ -1,0 +1,126 @@
+PROBLEM
+  OVERVIEW - Create a singly linked list where each element contains a piece of data and "points" to the next element.
+
+  INPUT:
+    - a variety of methods. See Examples for i/o of each method.
+    - each 'datum' is an integer 1-10.
+  OUTPUT:
+
+EXAMPLES/RULES
+  EXPLICIT METHODS
+    Element#datum
+      - getter for the element's datum
+      i: none
+      o: element's datum
+    Element#tail?
+      - t/f if it is last element???
+      i: 
+      o: 
+    Element#next
+      - returns the next element or `nil` if there is none.
+      i: none
+      o: next element or nil
+    Element#new
+      i: one or two args
+        - first arg is the current element's datum
+        - second, optional arg is the next (previous) element
+      o: none
+
+
+
+    SimpleLinkedList#new
+      - 
+      i: 
+      o:
+    SimpleLinkedList#empty?
+      i: none
+      o: t/f
+    SimpleLinkedList#push
+      - creates a new element
+      i: integer
+      o: ???
+    SimpleLinkedList#size
+      - returns integer, number of elements in list
+    SimpleLinkedList#peek
+      - returns datum in last in element ????
+    SimpleLinkedList#head
+      - returns entire last in element.
+    SimpleLinkedList#pop
+      - removes last in element
+      o: returns datum in removed element
+
+    SimpleLinkedList#from_a
+    SimpleLinkedList#to_a
+    SimpleLinkedList#reverse
+    
+  Data Structures
+    Arrays
+    Two Classes
+      - Element
+      - SimpleLinkedList
+  
+  ALGORITHM
+    class Element
+      #new(datum, next = nil)
+        INIT datum
+        INIT next
+
+      #next - getter for next
+        RETURN next
+      #datum - getter for datum
+        RETURN datum
+      #tail?
+        RETURN t if `next` is nil
+        RETURN f if `next` is an element
+
+
+    Initializing a new linked list
+      - initialize a head to nil
+    When we push
+      - instantiate a new element with the passed integer and current head element
+      - reassign head to reference this new element object.
+    Size
+      - counter?
+      - until we reach the tail??
+    Pop
+      - reassign head to the current head's next
+      - return the current head
+    from_a(array)
+      - takes one argument
+      - creates a new SimpleLinkedList
+      - if a valid array ... helper method?
+        iterates backwards through the array, pushing each element into the list
+    
+    HELPER METHODS
+      valid_array?
+        arr.nil? || arr.empty?
+
+CODE
+
+    class SimpleLinkedList
+      #new
+        INIT head to nil
+      #size
+      #empty
+        RETURN t/f if head is nil
+      #peek
+        RETURN head.datum
+      #head
+        return element at head
+
+      #push(int)
+        head = Element.new(int, head)
+      #pop
+        popped_datum = head.datum
+        head = head.next
+        popped_datum
+
+      #to_a
+      #from_a
+        INIT new_list
+        unless array is valid
+          ITERATE ((arr.size - 1)..0)
+            PUSH arr[current_index] onto new_list
+        RETURN new_list
+      #reverse
+

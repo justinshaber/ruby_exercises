@@ -1,0 +1,49 @@
+OVERVIEW
+  PROBLEM: Write a program that, given the month, year, day of the week, and a descriptor, determines the calendar date of a meetup.
+
+  INPUT:
+    - Constructor that takes a month and a year as INTEGERS
+    - Method `day` that takes the day of week and the schedule as STRINGS
+  OUTPUT:
+    - a new DateTime object as given by Date.civil(year, month, day)
+
+EXAMPLES/RULES
+class Meetup with a constructor taking a month and a year
+method day(weekday, schedule).
+  weekday is one of: monday, tuesday, wednesday, etc.
+  schedule is first, second, third, fourth, fifth, last, or teenth.
+  RETURNS a new DateTime object.
+    Return `nil` if there is no valid calendar date for the given inputs
+
+DATA STRUCTURES
+  Arrays
+
+ALGORITHM
+  Start at the first day of the month
+  Iterate from 1-7 until we find the correct day of the week
+    step by 7 collecting all relevant days
+    stop iteration when date is invalid
+  Helper method
+    case statement
+    Return the correct date
+
+
+
+  Meetup#new(year, month)
+    INIT year
+    INIT month
+    INIT results arr
+
+  Meetup#Day(weekday, descriptor)
+    weekday_int = convert_weekday
+    COUNTER = 0
+    LOOP
+      IF CORRECT DAY OF WEEK
+        step by 7 to collect each day
+      ELSE
+        counter += 1
+    
+
+
+
+

@@ -1,0 +1,57 @@
+PROBLEM
+  OVERVIEW: Given a letter of the alphabet, return a text 'diamond'
+  INPUT: string - a letter of the alphabet
+  OUTPUT: string - a symetrical diamond made up of letters
+
+EXAMPLES/RULES
+  Diamond.make_diamond('D')
+    A
+   B B
+  C   C
+ D     D
+E       E
+ D     D
+  C   C
+   B B
+    A
+
+  - All capitalized letters
+
+  Length of each string = (index of target letter in alphabet * 2) - 1
+    e.g. E is the 5th letter. (5*2)-1 = 9. Length of all strings is 9.
+
+  Position of each letter
+    str[arr.size - index + 1] str[-arr.size - index]
+    E str[0], str[-1]
+    D str[1], str[-2]
+    C str[2], str[-3]
+    B str[3], str[-4]
+    A str[4], str[-5]
+  
+  
+  EXPLICIT METHODS
+    Self#make_diamond
+      - accepts one argument, a string letter
+      - returns one string - the diamond
+  IMPLICIT METHODS
+    Create a string?
+
+DATA STRUCTURES
+  Arrays to store results
+
+ALGORITHM
+  Class#make_diamond(target)
+    INITIALIZE results arr
+    ITERATE from 'A'..'target' with index
+      INITIALIZE new_str to CREATE Class#new_empty_string(index)
+      REPLACE
+        str[arr.size - index + 1] = current_letter
+        str[-arr.size - index] = current letter
+      PUSH new_str to results
+    JOIN array with '\n' and RETURN
+
+  Class#new_empty_string
+    length = ((index + 1) * 2) - 1
+    RETURN " " * length
+
+

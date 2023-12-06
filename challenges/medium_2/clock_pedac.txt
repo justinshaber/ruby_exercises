@@ -1,0 +1,38 @@
+PROBLEM
+  OVERVIEW - Create a custom class that defines a 'clock' object which has clock functionality without the use of built in Date and Time functionality.
+
+  input: Integer
+  output: String that represents the time in 24 hour format
+
+EXAMPLES/RULES
+  EXPLICIT METHODS 
+    Class Methods
+      #at(hour, minutes)
+    INSTANCE METHODS
+      #to_s
+      #-
+      #+
+      #==
+  Can add or subtract any number of minutes.
+  Format is '08:00'
+
+DATA STRUCTURES
+  Arrays
+
+ALGORITHM
+  Self#at
+    INITIALIZES instance vars hours, minutes
+  Clock#to_s
+    RETURNS a formatted string
+      formatted_hours = "%02d" % @hours
+      formatted_minutes = "%02d" % @minutes
+  Clock#+(minutes_to_add)
+    add_hours, new_minutes = minutes_to_add.divmod(60)
+    hours = (add_hours + @hours) % 24
+    minutes = new_minutes
+  Clock#-(minutes to subtract)
+  
+
+
+
+
