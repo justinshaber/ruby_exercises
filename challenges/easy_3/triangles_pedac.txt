@@ -1,0 +1,50 @@
+PROBLEM: Write a program to determine whether a triangle is equilateral, isosceles, or scalene.
+  input: three integers representing three sides of a trianges
+  output: string - isosceles, equilateral, scalene
+
+EXAMPLES/RULES
+  Equal sides = equilateral
+  two sides the same = isosceles
+  all three different = scalene
+  sum of any two sides cannot be less than/equal to third side
+  no side can be zero or less than zero
+
+  Invalid triangles raise an Argument error
+
+DATA STRUCTURES
+Arrays
+splat operator
+
+Triangle class
+  #initialize
+    - accepts three integer args
+    - raises ArgumentError if sides are invalid
+  #kind
+    - returns proper string
+
+  HELPER METHODS
+  
+  #valid_sides?
+    The sum of any two sides is greater than the third side
+    
+
+
+ALGORITHM
+
+  class Triangle
+  #initialize(*sides)
+    INIT sides arr
+    RAISE ArgumentError unless sides.valid?
+  
+  #kind
+    case statement with #uniq
+    1 is equilateral
+    2 is isosceles
+    3 is scalene
+
+  #valid?
+    ALL sides are greater than zero AND
+    
+
+
+CODE
